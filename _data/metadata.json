@@ -1,0 +1,21 @@
+{
+  "title": "The website of Matt Kreiling",
+  "url": "https://matt-kreiling.website/",
+  "language": "en",
+  "description": "More stuff for the internet, but it's my stuff.",
+  "feed": {
+    "subtitle": "More stuff for the internet, but it's my stuff.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://matt-kreiling.website/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://matt-kreiling.website/feed/feed.json"
+  },
+  "author": {
+    "name": "Matt Kreiling",
+    "email": "kreiling@gmail.com",
+    "url": "https://matt-kreiling.website/about-me/"
+  }
+}

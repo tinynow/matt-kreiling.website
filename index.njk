@@ -1,0 +1,16 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+<h1>The Homepage</h1>
+<p>Welcome the the home page of my website. Let me know what you think on twitter <a href="https://twitter.com/tinynow">@tinynow</a> or via email kreiling@gmail.com</p>
+
+<h2>Writing</h2>
+
+{% set postslist = collections.posts | head(-3) %}
+{% set postslistCounter = collections.posts | length %}
+{% include "postslist.njk" %}
+
+<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
