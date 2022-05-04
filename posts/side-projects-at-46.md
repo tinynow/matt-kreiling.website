@@ -60,3 +60,4 @@ I am making it central and important by declaring it so, and for connecting it w
 
 ## Release notes
 - Published this blog - so actually shipped it
+- Netlify is almost too easy
