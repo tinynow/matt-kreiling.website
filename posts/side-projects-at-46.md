@@ -53,7 +53,7 @@ There are some interesting apps that will donate your money if you don't meet a 
 
 
 
-## Why this blog will ship?
+## Why this blog will ship
 
 This blog has already shipped! Will it stay up to date and published? Time will tell.
 
