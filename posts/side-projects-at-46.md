@@ -25,6 +25,8 @@ One thing they have in common is that they are incomplete. Almost none of them h
 
 Without shaming myself, I want to stop that. It need to be fixed!
 
+<img src="/img/fix-it-snl.gif" width="498" height="306">
+
 While there will always be a space for noodling around with hello worlds, especially to learn about certain features of an API, I want to ship something.
 
 ## What would make it easy to ship a side project?
@@ -53,9 +55,7 @@ There are some interesting apps that will donate your money if you don't meet a 
 
 ## Why this blog will ship?
 
-I am trying to think of this as a necessary next step, or perhaps a job that my future self has employed my to perform.
-
-I am making it central and important by declaring it so, and for connecting it with my larger goals. Essentially, it is meant to be some evidence that I am good at what I do. That I can think well about the domains I work within and execute.
+This blog has already shipped! Will it stay up to date and published? Time will tell.
 
 
 ## Release notes
