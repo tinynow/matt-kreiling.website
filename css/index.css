@@ -32,6 +32,9 @@ main {
 main :first-child {
   margin-top: 0;
 }
+main * {
+    max-width: 100%;
+}
 header {
   border-bottom: 1px dashed var(--lightgray);
 }
@@ -54,6 +57,8 @@ code {
   line-height: 1.5;
 }
 pre {
+    overflow-x: scroll;
+display: block;
   font-size: 14px;
   line-height: 1.375;
   direction: ltr;
