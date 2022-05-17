@@ -1,7 +1,7 @@
 ---
 title: Imperfectionism
 description: The many sides of perfect laziness.
-date: 2022-05-12
+date: 2022-05-17
 tags:
   - developing in the open
   - being a person
