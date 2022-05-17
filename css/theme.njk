@@ -3,21 +3,16 @@ permalink: "css/theme.css"
 ---
 
 :root {
-  --colorLight: {{ tokens.palette["open-boreal"] }};
-  --colorDark: {{ tokens.colorDark }};
-  {% for name, color in tokens.palette %}--{{ name }}: {{ color }};
-{% endfor %}
-  {% for name, color in tokens.colors %}--{{ name }}: {{ color }};
-{% endfor %}
+  {% for key, value in tokens %}
+  {% for name, val in value %}
+--{{key}}__{{ name }}: {{ val }};{% endfor %}{% endfor %}
 }
 
- {% for name, color in tokens.palette %}
-.bg--{{ name }} {
-    background-color: var(--{{ name }});
-}
+{% for name, color in tokens.palette %}
+.bg--{{ name }} { background-color: var(--palette__{{ name }}); }
 {% endfor %}
- {% for name, color in tokens.palette %}
+{% for name, color in tokens.palette %}
 .color--{{ name }} {
-    color: var(--{{ name }});
+    color: var(--palette__{{ name }});
 }
 {% endfor %}

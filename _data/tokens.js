@@ -13,14 +13,30 @@ module.exports = function () {
         "southern-evergreen": "hsl(16, 50%, 50%)",
         "mexican-pine-and-pine-oak": "hsl(342, 30%, 58%)",
         "tropical-areas-combined": "hsl(226, 29%, 37%)",
-        "montane-woodland": "hsl(50, 21%, 21%)"
+        "montane-woodland": "hsl(50, 21%, 21%)",
+        light: "hsl(270, 90%, 99%)"
     };
-    const colors = {
-        brand1: palette.grasslands
+    const lightTheme = {
+        text: palette['montane-woodland'],
+        bg: palette.light,
+        highlight: palette['chaparral-oak-woodland'],
+        'link--visited': palette['chaparral-oak-woodland'],
     };
+    const color = {
+        text: palette['montane-woodland'],
+        
+
+    };
+    const font = {
+        serif: "Garamond, Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif",
+        system: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif"
+    }
+
 
     return {
-        colors,
+        color,
         palette,
+        font,
+        "theme--light": lightTheme,
     };
 }

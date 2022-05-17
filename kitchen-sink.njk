@@ -3,15 +3,18 @@ layout: layouts/kitchen-sink.njk
 ---
 
 <div class="kitchen-sink" x-data="{ bgColor: 'inherit', color: 'inherit' }"  x-bind:class="`bg--${bgColor} color--${color}`">
+<h2>Colors</h2>
+    <details open>
+        <summary>checkit</summary>
 <ul>
 {% for name, color in tokens.palette %}
-<li style="color: var(--{{ name }});">{{ name }}: {{ color }} 
+<li style="color: var(--palette__{{ name }});">{{ name }}: {{ color }} 
     <button x-on:click="bgColor = '{{ name }}'">Set as background</button>
     <button x-on:click="color = '{{ name }}'">Set as text</button>
 </li>
 {% endfor %}
 </ul>
-
+</details>
 <h1>Bilbo breaking lesser hoping seat mother's caves.</h1>
 <p>My driven agree four blessings far Muil pierced hide dangers. Curse you and all the halflings! Imagine month broil attached snaffle wagers hence Háma. Try 11 suffered mat pledged éored Gondolin club.</p>
 <h2>Underground Havens plans misplaced you suppressed?</h2>
