@@ -3,10 +3,18 @@ permalink: "css/theme.css"
 ---
 
 :root {
-  {% for key, value in tokens %}
-  {% for name, val in value %}
---{{key}}__{{ name }}: {{ val }};{% endfor %}{% endfor %}
+    --h: 0;
+    --s: 10;
+    --l: 60%;
+    --hsl: var(--h), var(--s)%, 30%;
+    --test: hsl(var(--hsl));
+    border: var(--test) solid 10px;
+{% for key, value in tokens %}{% if key != 'paletteHSL' %}{% for name, val in value %}
+    --{{key}}__{{ name }}: {{ val }};{% endfor %}{% endif %}{% endfor %}
+{% for name, value in tokens.paletteHSL %}{% for part, val in value %}
+    --palette__{{ name }}__{{ part }}: {{val}};{% endfor %}{% endfor %}
 }
+
 
 {% for name, color in tokens.palette %}
 .bg--{{ name }} { background-color: var(--palette__{{ name }}); }

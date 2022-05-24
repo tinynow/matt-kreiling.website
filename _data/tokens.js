@@ -1,25 +1,103 @@
-module.exports = function () {
+const hsl = (h,s,l) => `hsl(${h}, ${s}%, ${l}%)`;
+const hslStringToObject = str => {
+    const keys = ['h','s','l','a'];
+    return str.split(',')
+    .map(part => parseInt(part.trim().match(/\d+/g)))
+    .reduce((obj, currentVal, index)=> {
+        obj[keys[index]] = currentVal;
+        return obj;
+    }, {});
+}
 
-    const palette = {
-        "open-boreal": "hsl(86, 27%, 50%)",
-        "closed-boreal": "hsl(57, 23%, 33%)",
-        "aspen-parkland": "hsl(195, 56%, 43%)",
-        "pacific-rain-forest": "hsl(124, 42%, 40%)",
-        "grasslands": "hsl(47, 74%, 61%)",
-        "oak-savannah": "hsl(46, 41%, 45%)",
-        "mesquite-grassland": "hsl(20, 65%, 68%)",
-        "pinyon-juniper": "hsl(198, 100%, 48%)",
-        "chaparral-oak-woodland": "hsl(13, 74%, 58%)",
-        "southern-evergreen": "hsl(16, 50%, 50%)",
-        "mexican-pine-and-pine-oak": "hsl(342, 30%, 58%)",
-        "tropical-areas-combined": "hsl(226, 29%, 37%)",
-        "montane-woodland": "hsl(50, 21%, 21%)",
-        light: "hsl(270, 90%, 99%)"
+module.exports = function () {
+    const paletteHSL = {
+        "open-boreal": {
+            h: 86,
+            s: 27,
+            l: 50,
+        },
+        "closed-boreal": {
+            h: 57,
+            s: 23,
+            l: 33,
+        },
+        "aspen-parkland": {
+            h: 195,
+            s: 56,
+            l: 43,
+        },
+        "pacific-rain-forest": {
+            h: 124,
+            s: 42,
+            l: 40,
+        },
+        "grasslands": {
+            h: 47,
+            s: 74,
+            l: 61,
+        },
+        "oak-savannah": {
+            h: 46,
+            s: 41,
+            l: 45,
+        },
+        "mesquite-grassland": {
+            h: 20,
+            s: 65,
+            l: 68,
+        },
+        "pinyon-juniper": {
+            h: 198,
+            s: 100,
+            l: 48,
+        },
+        "chaparral-oak-woodland": {
+            h: 13,
+            s: 74,
+            l: 58,
+        },
+        "southern-evergreen": {
+            h: 16,
+            s: 50,
+            l: 50,
+        },
+        "mexican-pine-and-pine-oak": {
+            h: 342,
+            s: 30,
+            l: 58,
+        },
+        "tropical-areas-combined": {
+            h: 226,
+            s: 29,
+            l: 37,
+        },
+        "montane-woodland": {
+            h: 50,
+            s: 21,
+            l: 21,
+        },
+        light: {
+            h: 270,
+            s: 90,
+            l: 94,
+        },
+        dark: {
+            h: 180,
+            s: 90,
+            l: 10,
+        },
     };
+    const palette = Object.entries(paletteHSL)
+    .reduce((obj, color) => {
+            const name = color[0];
+            obj[name] = hsl(color[1].h, color[1].s, color[1].l);
+            return obj;
+        }, {});
+
     const lightTheme = {
-        text: palette['montane-woodland'],
-        bg: palette.light,
-        highlight: palette['chaparral-oak-woodland'],
+        text: '#222',
+        bg: palette['mexican-pine-and-pine-oak'],
+        highlight: palette['montane-woodland'],
         'link--visited': palette['chaparral-oak-woodland'],
     };
     const color = {
@@ -35,6 +113,7 @@ module.exports = function () {
 
     return {
         color,
+        paletteHSL,
         palette,
         font,
         "theme--light": lightTheme,

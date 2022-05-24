@@ -1,19 +1,50 @@
 ---
 layout: layouts/kitchen-sink.njk
 ---
+<style>
 
-<div class="kitchen-sink" x-data="{ bgColor: 'inherit', color: 'inherit' }"  x-bind:class="`bg--${bgColor} color--${color}`">
+</style>
+<div class="kitchen-sink" x-data="{ bgColor: 'inherit', color: 'inherit', saturation: 50, lightness: 50, bgSaturation: 50, bgLightness: 50 }" :style="`
+--bg: var(--palette__${bgColor}__h), calc(${bgSaturation} * 1%), calc(${bgLightness} * 1%);
+--color: var(--palette__${color}__h), calc(${saturation} * 1%), calc(${lightness} * 1%);
+background-color: hsl(var(--bg)); color: hsl(var(--color))`">
+    <span x-text="color"></span>
+    <span x-text="saturation.toString()"></span>
+    <span x-text="lightness.toString()"></span>
 <h2>Colors</h2>
-    <details open>
-        <summary>checkit</summary>
-<ul>
-{% for name, color in tokens.palette %}
-<li style="color: var(--palette__{{ name }});">{{ name }}: {{ color }} 
-    <button x-on:click="bgColor = '{{ name }}'">Set as background</button>
-    <button x-on:click="color = '{{ name }}'">Set as text</button>
-</li>
-{% endfor %}
-</ul>
+<details open>
+    <summary>checkit</summary>
+    <fieldset>
+        <legend>Background</legend>
+    <label>Saturation
+    <input type="range" min="0" max="100" x-model="bgSaturation">
+    </label>
+    <label>Lightness
+        <input type="range" min="0" max="100" x-model="bgLightness">
+    </label>
+    </fieldset>
+    <fieldset>
+        <legend>Foreground</legend>
+    <label>Saturation
+    <input type="range" min="0" max="100" x-model="saturation">
+    </label>
+    <label>Lightness
+        <input type="range" min="0" max="100" x-model="lightness">
+    </label>
+    </fieldset>
+    <ul>
+    {% for name, color in tokens.palette %}
+        <li style="color: var(--palette__{{ name }});">{{ name }}: {{ color }} 
+            <button x-on:click="bgColor = '{{ name }}'; bgSaturation = {{ tokens.paletteHSL }}['{{name}}'];">Set as background</button>
+            <button x-on:click="color = '{{ name }}'">Set as text</button>
+            <div>
+            {% for val in [20,30,40,50,60,70,80,90] %}
+            <span class="swatch"  style="--hsl: var(--palette__{{ name }}__h), calc(var(--palette__{{ name }}__s) * 1%), {{val}}%; background-color: hsl(var(--hsl))">{{ val }}</span>
+            {% endfor %}
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
 </details>
 <h1>Bilbo breaking lesser hoping seat mother's caves.</h1>
 <p>My driven agree four blessings far Muil pierced hide dangers. Curse you and all the halflings! Imagine month broil attached snaffle wagers hence Háma. Try 11 suffered mat pledged éored Gondolin club.</p>

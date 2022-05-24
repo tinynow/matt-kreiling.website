@@ -32,7 +32,7 @@ img {
   max-width: 37.5em; /* 600px /16 */
 }
 p {
-    margin: 0;
+    margin: 1em 0 0 0;
 }
 
 .site-header,
@@ -121,23 +121,23 @@ code {
 
 .postlist-date,
 .postlist-item:before {
-  font-size: 0.825em;
+    font-size: 0.825em;
 }
 .postlist-date {
     letter-spacing: -.05em;
-  word-spacing: -1px;
+    word-spacing: -1px;
 }
 .postlist-link {
     display: block;
     font-size: clamp(1.25em, 9vw, 2em);
     line-height: 1.1;
-  font-weight: bold;
-  text-decoration: none;
+    font-weight: bold;
+    text-decoration: none;
 }
 .post-tags {
     text-align: right;
     margin-top: 1em;
-    border-top: #ddd 1px groove;
+    /* border-top: #ddd 1px groove; */
 }
 /* Tags */
 .post-tag {
@@ -229,4 +229,10 @@ main * {
 }
 main *:where(h1, h2, h3, h4, .post-tag, .postlist-link, time) {
     font-family: var(--font__system);
+}
+
+.swatch {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
 }
