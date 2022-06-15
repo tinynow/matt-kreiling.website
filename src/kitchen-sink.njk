@@ -1,13 +1,18 @@
 ---
 layout: layouts/kitchen-sink.njk
 ---
+<div class="kitchen-sink" x-data="{ bgColor: 'inherit', color: $store.color, linkColor: 'inherit', saturation: 50, lightness: 50, bgSaturation: 50, bgLightness: 50 }" 
+:style="{ backgroundColor: `var(${bgColor})`, color: `var(${color})`, '--actionText--primary': `var(${linkColor})`, '--actionText--secondary': '' }">
 <style>
-
+a {
+    color: var(--actionColor);
+}
 </style>
-<div class="kitchen-sink" x-data="{ bgColor: 'inherit', color: 'inherit', saturation: 50, lightness: 50, bgSaturation: 50, bgLightness: 50 }" :style="`
---bg: var(--palette__${bgColor}__h), calc(${bgSaturation} * 1%), calc(${bgLightness} * 1%);
---color: var(--palette__${color}__h), calc(${saturation} * 1%), calc(${lightness} * 1%);
-background-color: hsl(var(--bg)); color: hsl(var(--color))`">
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('color', 'blue');
+    })
+</script>
     <span x-text="color"></span>
     <span x-text="saturation.toString()"></span>
     <span x-text="lightness.toString()"></span>
@@ -33,10 +38,12 @@ background-color: hsl(var(--bg)); color: hsl(var(--color))`">
     </label>
     </fieldset>
     <ul>
-    {% for name, color in tokens.palette %}
-        <li style="color: var(--palette__{{ name }});">{{ name }}: {{ color }} 
-            <button x-on:click="bgColor = '{{ name }}'; bgSaturation = {{ tokens.paletteHSL }}['{{name}}'];">Set as background</button>
+    {% for name, color in tokens.cssShades %}
+        <li style="color: var({{ name }});">
+            {{ name }}: {{ color }} 
+            <button x-on:click="bgColor = '{{ name }}';">Set as background</button>
             <button x-on:click="color = '{{ name }}'">Set as text</button>
+            <button x-on:click="linkColor = '{{ name }}'">Set as link</button>
             <div>
             {% for val in [20,30,40,50,60,70,80,90] %}
             <span class="swatch"  style="--hsl: var(--palette__{{ name }}__h), calc(var(--palette__{{ name }}__s) * 1%), {{val}}%; background-color: hsl(var(--hsl))">{{ val }}</span>
@@ -47,7 +54,7 @@ background-color: hsl(var(--bg)); color: hsl(var(--color))`">
     </ul>
 </details>
 <h1>Bilbo breaking lesser hoping seat mother's caves.</h1>
-<p>My driven agree four blessings far Muil pierced hide dangers. Curse you and all the halflings! Imagine month broil attached snaffle wagers hence Háma. Try 11 suffered mat pledged éored Gondolin club.</p>
+<p>My driven agree <a href="">four blessings</a> far Muil pierced hide dangers. Curse you and all the halflings! Imagine month broil attached snaffle wagers hence Háma. Try 11 suffered mat pledged éored Gondolin club.</p>
 <h2>Underground Havens plans misplaced you suppressed?</h2>
 <p>Rebuilt salvage Edoras manner ease feeling early? All right, then. Keep your secrets. Fundin ruin tricksed pack armory jambags facing?</p>
 <h3>Subtleties eluded underground split flurgaburburhobbit excessive Boffins bathroom.</h3>

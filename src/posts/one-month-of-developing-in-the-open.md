@@ -2,22 +2,23 @@
 title: One month of developing in the open
 description: Even with the massive amount of yak-shaving and bike-shedding, things are getting shipped.
 date: 2022-05-25
+updated: 2022-05-30
 tags:
   - developing in the open
 layout: layouts/post.njk
 ---
 
-I decided to begin developing in the open because I couldn't tolerate my awful pattern of starting things and never shipping. Developing in the open is a tech term for not giving a crap about quality while you build your website. Shipping is a tech term for finishing something you started.
+I decided to begin developing in the open because I couldn't tolerate my awful pattern of starting and never shipping. Developing in the open is a tech term for not giving a crap about quality while you build your website. Shipping is a tech term for finishing something you started.
 
-Here are some of the insights and accomplishments that have blessed me after only one month of this process.
+Here are some of the insights and accomplishments that have blessed me after one month of this process.
 
 - I published five posts if you count this one
 - Rabbit holes still exist, and I am still diving down them, but there is a certain point where I am turning back. In my graveyard of previous ~~side~~ projects, the rabbit holes led to dead ends and often led me to abandon the project.
-- My writing quality is very poor in these posts, I plan on going back to them and adding an updated date. As someone who was a writing major before learning web development, I feel shame at the lack of focus, concision, and narrative flow.
+- My writing quality is poor in these posts, I plan on going back to them and adding an updated date. As someone who was a writing major before learning web development, I feel shame at the lack of focus, concision, and narrative flow.
 - The posts have been more helpful to me than I had thought they would.
-    - They are revealing aspects of why I haven't shipped as many side projects as I wanted to. I have always needed to negotiate with my tendency to procrastinate. For better or worse, I have come to value many of the things that procrastination has provided me, including perfectionism and the general value of doing nothing. Keeping this reality up front has been helpful so that I can honor the need to understand the problem space deeply, without becoming paralyzed.
+    - They are revealing aspects of why I haven't shipped side projects as I wanted to. I have always needed to negotiate with my tendency to procrastinate. For better or worse, I have come to value the benefits that procrastination has provided me, including perfectionism and the general value of doing nothing. Keeping this reality up front has been helpful so that I can honor the need to understand the problem space deeply, without becoming paralyzed.
     - They are reminding me of the amount of work I have done. Each post doesn't even cover all the research, thinking, and coding I have done. It is truly surprising to me how much I am doing, but at the same time it is understandable - because all those dead-end rabbit holes actually left me with useful knowledge and sometimes code that I can use in this project.
-- Even with no real audience (I've only told a couple of people. And maybe one post on Twitter where I have almost not followers), I am motivated by the idea of publishing for them. Thank you audience. It is your support that keeps me going.
+- Even with no real audience (I've told only a couple of people. And maybe one post on Twitter where I have almost not followers), I am motivated by the idea of publishing for them. Thank you audience. It is your support that keeps me going.
 - It is just generally satisfying to publish. Seeing stuff you made at an actual URL on the world wide web doesn't seem to get old.
 - I need a better editorial process, but one that doesn't slow me down too much.
 - I have much more to say than I imagined. Just documenting the rabbit holes is enough to keep me in posts forever.

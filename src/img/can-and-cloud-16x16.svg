@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="64" height="64">
+<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="64" height="64">
 
     <path id="canSides" class="logo__can-sides" fill="#FFF" stroke="#000" stroke-linejoin="round"
         d="M3 2h10v11.1c-.1 1-2.3 1.9-5 1.9-2.8 0-5-.9-5-2V2z" />

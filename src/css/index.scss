@@ -1,0 +1,225 @@
+/* test */
+@import "1-global/reset";
+@import "0-settings/animations";
+/* Max width */
+p,
+.tmpl-post li,
+img {
+    max-width: 37.5em; /* 600px /16 */
+}
+
+p {
+    margin: 1em 0 0 0;
+}
+
+main {
+    padding: var(--outer-padding, 1rem);
+}
+
+main :first-child {
+    margin-top: 0;
+}
+
+main * {
+    max-width: 100%;
+}
+
+header {
+    border-bottom: 1px dashed var(--lightgray);
+}
+
+pre,
+code {
+    font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
+        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier,
+        monospace;
+    line-height: 1.5;
+}
+
+pre {
+    overflow-x: scroll;
+    display: block;
+    font-size: 14px;
+    line-height: 1.375;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    padding: 1em;
+    margin: 0.5em 0;
+    background-color: #f6f6f6;
+}
+
+code {
+    word-break: break-all;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    align-items: center;
+}
+
+/* Nav */
+.nav {
+    list-style: none;
+    transform-origin: top left;
+    transform: skewY(30deg);
+    padding: 0;
+    margin-block: 0 51px;
+    width: 200px;
+}
+
+.nav-item {
+    display: inline-block;
+    outline: 1px dotted gainsboro;
+}
+
+.nav-item-active {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+    list-style: none;
+    padding: 0;
+    max-width: 50ch;
+    line-height: 1.5rem;
+}
+
+.postlist-item {
+    margin-top: 3em;
+}
+
+.postlist-description {
+    margin-top: 0.5em;
+}
+
+.postlist-date,
+.postlist-item:before {
+    font-size: 0.825em;
+}
+
+.postlist-date {
+    letter-spacing: -0.02em;
+    word-spacing: -1px;
+}
+
+.postlist-link {
+    display: block;
+    font-size: clamp(1.25em, 9vw, 2em);
+    line-height: 1.1;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.post-tags {
+    text-align: right;
+    margin-top: 1em;
+    /* border-top: #ddd 1px groove; */
+}
+
+/* Tags */
+.post-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-family: var(--system);
+    padding: 2px 4px;
+    border: 1px solid var(--accents_secondary_subtle);
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+a[href].post-tag,
+a[href].post-tag:visited {
+    color: inherit;
+}
+
+a[href].post-tag:hover,
+a[href].post-tag:focus {
+    transform: scale(1.1);
+}
+
+.postlist-item > .post-tag {
+    align-self: center;
+}
+
+/* Direct Links / Markdown Headers */
+.direct-link {
+    font-family: sans-serif;
+    text-decoration: none;
+    font-style: normal;
+    margin-left: 0.1em;
+}
+
+a[href].direct-link,
+a[href].direct-link:visited {
+    color: transparent;
+}
+
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+    color: #aaa;
+}
+
+/* Colors */
+body {
+    background-color: var(--theme--light__bg);
+    color: var(--theme--light__text);
+}
+
+a {
+    text-decoration-color: var(--theme--light__highlight);
+    color: var(--theme--light__highlight);
+}
+.logo {
+    outline: 1px solid red;
+    margin: 20px;
+    transform: skewY(-30deg);
+}
+.logo__can-top {
+    fill: var(--theme--light__text);
+    stroke: var(--theme--light__text);
+}
+
+.logo__can-sides {
+    stroke: var(--theme--light__text);
+}
+
+.logo__cloud {
+    stroke: var(--theme--light__highlight);
+    animation: drift 8s linear 1;
+}
+
+.site-header:hover .logo__cloud {
+    animation: drift 8s ease-in-out infinite;
+    /* animation-fill-mode: both; */
+}
+
+.logo__text {
+    transform: translateY(-6px);
+    font-family: var(--font__serif);
+    font-size: 3px;
+    letter-spacing: 0.1em;
+}
+
+.swatch {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+/*# sourceMappingURL=index.css.map */

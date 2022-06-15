@@ -1,0 +1,47 @@
+---
+permalink: "css/theme.css"
+---
+:root {
+{% for key, value in tokens %}
+{{ key }}: {{value}};{% endfor %}
+}
+
+{% for name, color in tokens.palette %}
+.bg--{{ name }} { background-color: var(--palette__{{ name }}); }
+{% endfor %}
+{% for name, color in tokens.palette %}
+                
+.color--{{ name }} {
+    color: var(--palette__{{ name }});
+}{% endfor %}
+
+body {
+    background-color: var(--background);
+    font-family: var(--serif);
+    border-top: 2px solid var(--accents_primary_strong);
+    text-decoration-color: var(--accents_primary_subtle);
+}
+h1, h2, .postlist-link  {
+    font-family: var(--system);
+    color: var(--text_light);
+        text-shadow: .5px .5px 0px var(--accents_secondary_stron, white), 1px 0px var(--accents_secondary_strong);
+}
+a:not(.postlist-link) {
+    color: var(--accents_primary_strong);
+    text-decoration-color: var(--accents_secondary_subtle);
+}
+.nav-item a {
+    font-family: var(--system);
+    color: var(--hammanBlue--5);
+    font-weight: 700;
+    letter-spacing: 2px;
+    background-color: var(--preciousPersimmon--2);
+    padding: 2px 8px;
+    display: inline-block;
+    margin: 2px;
+    width: 100%;
+max-height: 10em;
+        
+}
+/* --bg: var(--palette__${bgColor}__h), calc(${bgSaturation} * 1%), calc(${bgLightness} * 1%, bgColor);
+--color: var(--palette__${color}__h), calc(${saturation} * 1%), calc(${lightness} * 1%, color); */

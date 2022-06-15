@@ -10,7 +10,7 @@ layout: layouts/post.njk
 
 My side projects, so far, are pretty unimpressive. They are numerous, diverse, and go back 12 years.
 
-The projects folder and codepen collection are massive graveyards of very cool beginnings. Hundreds of hello worlds and prototypes:
+The projects folder and codepen collection are massive graveyards of cool beginnings. Hundreds of hello worlds and prototypes:
 - in all of the trendiest frameworks, 
 - with the coolest CSS,
 - the newest DOM APIs, 
@@ -50,8 +50,6 @@ Not just setting aside some time, you need to set aside some prime hours, early 
 ### You face consequences if you don't do it
 
 There are some interesting apps that will donate your money if you don't meet a goal. An accountability partner could help. For me, developing in the open is a great option because an audience holds you more accountable.
-
-
 
 ## Why this blog will ship
 
