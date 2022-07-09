@@ -61,28 +61,38 @@ pre {
 code {
     word-break: break-all;
 }
-
+/* * { outline: hotpink 1px dotted;} */
 /* Header */
 .site-header {
-    display: flex;
-    align-items: center;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 10vh min-content 10vh;
+    grid-template-rows: max-content 7vh;
+    padding-inline: clamp(4px, 1vw, 2rem);
 }
 
 /* Nav */
 .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
     list-style: none;
     transform-origin: top left;
-    transform: skewY(30deg);
-    padding: 0;
-    margin-block: 0 51px;
-    width: 200px;
+    transform: skewY(16.5deg);
+    width: clamp(150px, 17vh, 500px);
+    padding: 8px;
+    margin: 0;
+    background-color: var(--accents_secondary_strong);
 }
 
 .nav-item {
     display: inline-block;
-    outline: 1px dotted gainsboro;
 }
-
+.nav-item a {
+    font-family: var(--system);
+    color: var(--hammanBlue--5);
+    font-weight: 700;
+}
 .nav-item-active {
     font-weight: 700;
     text-decoration: underline;
@@ -186,11 +196,18 @@ a {
     text-decoration-color: var(--theme--light__highlight);
     color: var(--theme--light__highlight);
 }
+
 .logo {
-    outline: 1px solid red;
-    margin: 20px;
+    aspect-ratio: 1;
+/*     padding: 8px; */
+    height: 10vh;
+    width: 10vh;
+    min-height: 64px;
+    background-color: var(--accents_primary_strong);
+    transform-origin: top right;
     transform: skewY(-30deg);
 }
+
 .logo__can-top {
     fill: var(--theme--light__text);
     stroke: var(--theme--light__text);
@@ -201,17 +218,16 @@ a {
 }
 
 .logo__cloud {
-    stroke: var(--theme--light__highlight);
-    animation: drift 8s linear 1;
-}
-
-.site-header:hover .logo__cloud {
-    animation: drift 8s ease-in-out infinite;
-    /* animation-fill-mode: both; */
+    stroke: var(--hotPink--1);
+    animation: drift 8s linear infinite;
+    animation-fill-mode: backwards;
+    .logo:nth-of-type(2) & {
+        animation-delay: 3s;
+        transform: translateX(100%);
+    }
 }
 
 .logo__text {
-    transform: translateY(-6px);
     font-family: var(--font__serif);
     font-size: 3px;
     letter-spacing: 0.1em;

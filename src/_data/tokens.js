@@ -20,6 +20,12 @@ const transformTokensToCSS = tokens => Object.entries(tokens).reduce((prev, [key
 }, {});
 
 const shades = {
+    electricBlue: [
+        "#8DEFF5",
+    ],
+    hotPink: [
+        "#ff3ded",
+    ],
     preciousPersimmon: [
         "rgb(255, 251, 250)",
         "rgb(255, 233, 227)",
@@ -92,7 +98,7 @@ module.exports = function () {
         accents: {
             primary: {
                 strong: {
-                    value: '--preciousPersimmon--7',
+                    value: '--electricBlue--1',
                 },
                 subtle: {
                     value: '--preciousPersimmon--8',
