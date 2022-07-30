@@ -56,3 +56,6 @@ What Pressfield means by being a professional is that you must consider the impo
 </figure>
 
 But most professionals do the work to get paid, and while that is sometimes a side effect of creative work, sometimes the work itself is the end. Resistance points us towards the Important Work because that which is most worth doing is that which we fear the most.
+
+This idea, the idea of fearing that which is good for us, is an idea for another time.
+
