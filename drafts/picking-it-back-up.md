@@ -1,7 +1,7 @@
 ---
 title: The Resistance
 description: 
-date: 2022-07-16
+date: 2023-01-01
 tags:
   - developing in the open
   - being a person
@@ -10,12 +10,14 @@ layout: layouts/post.njk
 
 I was so proud of myself for the first month of developing in the open. I spun up a website and wrote five blog posts, learned a whole bunch and shipped despite doing deep dives.
 
-A month and a half later. I am picking up the work again.
+Then I dropped it.
+
+A month and a half later I am picking up the work again.
 
 ## What happened to my velocity
 In some software development practices, velocity is the amount of work you get done.
 
-Life's velocity did not slow, but I can't really blame all the happenings in my life for not working towards one of my handful of large goals. 
+Life's velocity did not slow, but I can't blame all the happenings in my life for not working towards one of my handful of large goals.
 
 Building up this website, filling it up with content is critical to flexibility in my career because I do not have enough evidence of my expertise and abilities. My job is behind the walls of a government agency, hidden within codebases I cannot share and non-coding activities that I need to write about (before I forget). It's Important Work.
 
@@ -27,9 +29,11 @@ Instead, I prototyped a word game called Annoying Bee.
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-I am tempted to list all the stuff other than this website that I did these last 45 days, but there is always time if you make it. There have been fungible hours of desultory wandering around my house and garden, podcast bingeing, youtube rabbit holes, and other entertainments. Those hours when I had adequate energy and focus could have been exchanged for hours doing the Important Work.
+I could list all the stuff other than this website that I did these last 45 days. Some of my excuses are pretty convincing. But, there is always time if you make it. I didn't make the time. There have been fungible hours of desultory wandering around my house and garden, podcast bingeing, youtube rabbit holes, and other entertainments. 
 
-It may be that I the joy of making a game, or some myriad excuses caused the issue, but an easier and probably more useful explanation is Resistance. This is a metaphor that author [Steven Pressfield](https://stevenpressfield.com/home/) explains in his book _The War of Art_. Instead of diving deep into the causes of procrastination, he names the culprit Resistance. If you have ever procrastinated or suffered from writer's block, the feeling that you feel right before you give up or that prevents you from getting started is Resistance. Don't complicate it. Call it Resistance and know that it's the enemy.
+Those hours when I had adequate energy and focus could have been hours spent on Important Work. It may be that the joy of making a game, or some myriad excuses caused the issue, but an easier and probably more useful explanation is Resistance. 
+
+Resistance is a metaphor that author [Steven Pressfield](https://stevenpressfield.com/home/) explains in his book _The War of Art_. Instead of diving deep into the causes of procrastination, he names the culprit Resistance. If you have ever procrastinated or suffered from writer's block, the feeling that you feel right before you give up or that prevents you from getting started is Resistance. Don't complicate it. Call it Resistance and know that it's the enemy.
 
 Resistance killed my velocity.
 

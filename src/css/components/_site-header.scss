@@ -1,0 +1,10 @@
+/* Header */
+.site-header {
+    height: calc(var(--space) * 2);
+    border-bottom: 1px outset var(--color-site-header__border, #444);
+    // overflow: hidden;
+    // display: grid;
+    // grid-template-columns: 10vh min-content 10vh;
+    // grid-template-rows: max-content 7vh;
+    // padding-inline: clamp(4px, 1vw, 2rem);
+}

@@ -1,0 +1,13 @@
+{
+    "source": ["src/_data/tokens.js"],
+    "platforms": {
+        "scss": {
+            "transformGroup": "css",
+            "buildPath": "src/css/",
+            "files": [{
+                "destination": "customProperties.scss",
+                "format": "css/variables"
+            }]
+        }
+    }
+}

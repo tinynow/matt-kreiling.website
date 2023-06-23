@@ -1,0 +1,74 @@
+:root {
+    // --fontSize--base: -1rem + 4vw;
+    --fontSize--base: clamp(1rem, calc(0.5rem + 2vw), 1.75rem);
+    --fontSize--xl: clamp(2.25rem, calc(1.25rem + 2.5vw), 4rem);
+    --fontSize--xxl: clamp(2.5rem, calc(1.5rem + 3vw), 5rem);
+    --fontSize--base: 1rem;
+    --lineHeight--base: 1.5;
+    --space: var(--fontSize--base) * var(--lineHeight--base);
+
+    --readableWidth--max: 60ch;
+}
+
+body {
+    font-family: var(--font-serif);
+    font-size: var(--fontSize--base);
+    line-height: var(--lineHeight--base);
+    // background: repeating-linear-gradient(
+    //     hsl(0 0 0 / 0.05),
+    //     hsl(0 0 0 / 0.05) calc(var(--space) / 2),
+    //     white calc(var(--space) / 2),
+    //     white calc(var(--space))
+    // );
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    margin-block: 0 var(--space);
+}
+
+h1 {
+    font-size: var(--fontSize--xxl);
+    line-height: calc(var(--space) * 2);
+    margin-bottom: calc(var(--space));
+}
+
+h2 {
+    font-size: var(--fontSize--xl);
+    font-weight: 400;
+    line-height: calc(var(--space) * 2);
+}
+
+.readable {
+    *:where(p, ul, ol, dl, blockquote) {
+        max-width: var(--readableWidth--max);
+        margin-block: calc(var(--space)) 0;
+    }
+
+    ul,
+    ol {
+        padding-inline-start: 1em;
+        list-style-position: inside;
+        text-indent: -1em;
+        line-height: calc(var(--space) * 0.875);
+    }
+
+    li {
+        margin-top: calc(var(--space) / 2);
+        max-width: calc(100% - var(--space));
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-block-start: calc(var(--space));
+    }
+}

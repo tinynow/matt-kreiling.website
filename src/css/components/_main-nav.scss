@@ -1,0 +1,26 @@
+/* Nav */
+.nav {
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 4px 16px;
+    list-style: none;
+    // transform-origin: top left;
+    // transform: skewY(16.5deg);
+    // width: clamp(150px, 17vh, 500px);
+    padding: 0;
+    margin: 0;
+    background-color: var(--accents_secondary_strong);
+}
+
+.nav-item {
+    display: inline-block;
+}
+.nav-item a {
+    font-family: var(--font-system);
+    color: var(--hammanBlue--5);
+    font-weight: 700;
+}
+.nav-item-active {
+    font-weight: 700;
+    text-decoration: underline;
+}

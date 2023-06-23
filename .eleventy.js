@@ -6,17 +6,40 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const eleventySass = require("eleventy-sass");
+const StyleDictionary = require('style-dictionary').extend({
+    source: ['src/_data/tokens.js'],
+    platforms: {
+        scss: {
+            transformGroup: 'css', //https://amzn.github.io/style-dictionary/#/transform_groups?id=css
+            buildPath: 'src/css/',
+            files: [{
+                destination: 'customProperties.scss',
+                format: 'css/variables',
+            }]
+        }
+    }
+});
 
 module.exports = function (eleventyConfig) {
-    // Copy the `img` and `css` folders to the output
+    // Copy the folders to the output
     eleventyConfig.addPassthroughCopy("img");
-    // eleventyConfig.addPassthroughCopy("css");
+    // don't process this file because style dictionary will handle it
 
     // Add plugins
     eleventyConfig.addPlugin(eleventySass);
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
     eleventyConfig.addPlugin(pluginNavigation);
+
+
+    // eleventyConfig.on('eleventy.beforeWatch', async (changedFiles) => {
+
+    //     if (changedFiles.includes('./src/css/customProperties.scss') && changedFiles.length === 1) {
+    //         return;
+    //     }
+    //     console.log(`Running style-dictionary..`, changedFiles);
+    //     StyleDictionary.buildAllPlatforms();
+    // });
 
     eleventyConfig.addFilter("readableDate", dateObj => {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat("LLL d, yyyy");
@@ -101,7 +124,7 @@ module.exports = function (eleventyConfig) {
             "md",
             "njk",
             "html",
-            "liquid"
+            "liquid",
         ],
 
         // Pre-process *.md files with: (default: `liquid`)

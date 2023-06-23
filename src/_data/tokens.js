@@ -1,24 +1,3 @@
-const hsl = (h, s, l) => `hsl(${h}, ${s}%, ${l}%)`;
-const flattenTokens = (obj, parent, result = {}) => {
-    for (let key in obj) {
-        if (key !== 'value') {
-            console.log(key)
-            let name = parent ? parent + '_' + key : key;
-            flattenTokens(obj[key], name, result)
-        } else {
-            result[parent] = obj[key];
-        }
-    }
-    return result;
-};
-
-const transformTokensToCSS = tokens => Object.entries(tokens).reduce((prev, [key, value]) => {
-    const newKey = `--${key}`;
-    const newValue = `var(${value})`;
-    prev[newKey] = newValue;
-    return prev
-}, {});
-
 const shades = {
     electricBlue: [
         "#8DEFF5",
@@ -76,52 +55,75 @@ const shades = {
     ]
 };
 
-const cssShades = Object.entries(shades).reduce((prev, [name, values]) => {
-    values.forEach((rgbString, index) => {
-        prev[`--${name}--${index + 1} `] = rgbString;
-    })
-    return prev;
-}, {})
+const cssShades = {}
+Object.entries(shades).forEach(([color, values]) => {
+    values.forEach((value, index) => {
+        cssShades[`--${color}-${index}`] = {
+            value
+        };
+    });
+});
 
-module.exports = function () {
-
-    const lightTheme = {
-        text: {
-            value: '--ruthlessEmpress--9',
-            light: {
-                value: '--ruthlessEmpress--8',
+const lightTheme = {
+    text: {
+        dark: {
+            value: '--ruthlessEmpress-9',
+        },
+        light: {
+            value: '--ruthlessEmpress-8',
+        },
+    },
+    background: {
+        value: '--whaleShark-1'
+    },
+    accents: {
+        primary: {
+            strong: {
+                value: 'var(--electricBlue-0)',
+            },
+            subtle: {
+                value: '--preciousPersimmon-8',
             },
         },
-        background: {
-            value: '--whaleShark--1'
-        },
-        accents: {
-            primary: {
-                strong: {
-                    value: '--electricBlue--1',
-                },
-                subtle: {
-                    value: '--preciousPersimmon--8',
-                },
+        secondary: {
+            strong: {
+                value: '--preciousPersimmon-5'
             },
-            secondary: {
-                strong: {
-                    value: '--preciousPersimmon--5'
-                },
-                subtle: {
-                    value: '--preciousPersimmon--3'
-                }
+            subtle: {
+                value: '--preciousPersimmon-3'
             }
-        },
-    };
-    const font = {
-        '--serif': "Garamond, Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif",
-        '--system': "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif"
+        }
+    },
+};
+const font = {
+    '--serif': {
+        value: "'EB Garamond', Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif"
+    },
+    '--system': {
+        value: "'Eb Garamond', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif"
+    },
+    size: {
+        base: {
+            value: "clamp(1.25em, -1rem + 4vw, 2em)",
+            min: {
+                value: "1.25em",
+            }
+        }
     }
+}
 
-    return {
-        ...cssShades,
-        ...font,
-        ...transformTokensToCSS(flattenTokens(lightTheme)),
-    };
+// const cssShades = Object.entries(shades).reduce((prev, [name, values]) => {
+//     values.forEach((rgbString, index) => {
+//         prev[`--${name}--${index + 1} `] = rgbString;
+//     })
+//     return prev;
+// }, {})
+
+module.exports = {
+    font,
+    ...cssShades,
+    color: {
+        ...lightTheme,
+    },
+
 }
