@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Service Gothic';
+    src: url('../../fonts/Service_Gothic_v0.2_Variable.woff2');
+
+}
+
 :root {
     // --fontSize--base: -1rem + 4vw;
     --fontSize--base: clamp(1rem, calc(0.5rem + 2vw), 1.75rem);
@@ -11,7 +17,8 @@
 }
 
 body {
-    font-family: var(--font-serif);
+    font-family: var(--font-system);
+    font-weight: 300;
     font-size: var(--fontSize--base);
     line-height: var(--lineHeight--base);
     // background: repeating-linear-gradient(
@@ -34,6 +41,7 @@ h6 {
 }
 
 h1 {
+    font-family: var(--font-display);
     font-size: var(--fontSize--xxl);
     line-height: calc(var(--space) * 2);
     margin-bottom: calc(var(--space));

@@ -23,8 +23,7 @@ const StyleDictionary = require('style-dictionary').extend({
 module.exports = function (eleventyConfig) {
     // Copy the folders to the output
     eleventyConfig.addPassthroughCopy("img");
-    // don't process this file because style dictionary will handle it
-
+    eleventyConfig.addPassthroughCopy("src/fonts");
     // Add plugins
     eleventyConfig.addPlugin(eleventySass);
     eleventyConfig.addPlugin(pluginRss);
