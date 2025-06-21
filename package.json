@@ -36,5 +36,8 @@
     "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^8.4.1",
     "style-dictionary": "^3.7.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-img": "^6.0.1"
   }
 }

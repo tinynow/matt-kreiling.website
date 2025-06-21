@@ -6,6 +6,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const eleventySass = require("eleventy-sass");
+const Image = require("@11ty/eleventy-img");
 const StyleDictionary = require('style-dictionary').extend({
     source: ['src/_data/tokens.js'],
     platforms: {
@@ -22,7 +23,7 @@ const StyleDictionary = require('style-dictionary').extend({
 
 module.exports = function (eleventyConfig) {
     // Copy the folders to the output
-    eleventyConfig.addPassthroughCopy("img");
+    eleventyConfig.addPassthroughCopy("src/img");
     eleventyConfig.addPassthroughCopy("src/fonts");
     // Add plugins
     eleventyConfig.addPlugin(eleventySass);
@@ -30,6 +31,39 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
     eleventyConfig.addPlugin(pluginNavigation);
 
+    // Add responsive image shortcode
+    eleventyConfig.addShortcode("responsiveImage", async function(src, alt, sizes = "100vw") {
+        if (alt === undefined) {
+            throw new Error(`Missing \`alt\` on responsiveImage from: ${src}`);
+        }
+
+        let metadata = await Image(src, {
+            widths: [400, 800, 1200], // Small mobile, tablet, desktop
+            formats: ["webp", "jpeg"],
+            outputDir: "./_site/img/",
+            urlPath: "/img/"
+        });
+
+        let lowsrc = metadata.jpeg[0];
+        let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+
+        return `<picture>
+            ${Object.values(metadata)
+                .map((imageFormat) => {
+                    return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat
+                        .map((entry) => entry.srcset)
+                        .join(", ")}" sizes="${sizes}">`;
+                })
+                .join("\n")}
+            <img
+                src="${lowsrc.url}"
+                width="${highsrc.width}"
+                height="${highsrc.height}"
+                alt="${alt}"
+                loading="lazy"
+                decoding="async">
+        </picture>`;
+    });
 
     // eleventyConfig.on('eleventy.beforeWatch', async (changedFiles) => {
 
@@ -134,9 +168,9 @@ module.exports = function (eleventyConfig) {
 
         // -----------------------------------------------------------------
         // If your site deploys to a subdirectory, change `pathPrefix`.
-        // Don’t worry about leading and trailing slashes, we normalize these.
+        // Don't worry about leading and trailing slashes, we normalize these.
 
-        // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
+        // If you don't have a subdirectory, use "" or "/" (they do the same thing)
         // This is only used for link URLs (it does not affect your file structure)
         // Best paired with the `url` filter: https://www.11ty.dev/docs/filters/url/
 
