@@ -1,10 +1,10 @@
 {
-  "title": "The website of Matt Kreiling",
+  "title": "MK - Code and Not Code",
   "url": "https://matt-kreiling.website/",
   "language": "en",
-  "description": "More stuff for the internet, but it's my stuff.",
+  "description": "Making a mess making sense. Making websites.",
   "feed": {
-    "subtitle": "More stuff for the internet, but it's my stuff.",
+    "subtitle": "Making a mess making sense. Making websites.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://matt-kreiling.website/"

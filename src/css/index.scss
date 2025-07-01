@@ -5,9 +5,11 @@
 @import "1-global/remedy";
 @import "1-global/reset";
 @import "1-global/typography";
+@import "spotlight.css";
 @import "components/main-nav";
 @import "components/tags";
 @import "components/site-header";
+@import "1-global/page-layouts";
 
 main {
     padding: calc(var(--space)) calc(var(--space) / 2);
@@ -52,7 +54,6 @@ code {
 .postlist {
     list-style: none;
     padding: 0;
-    max-width: 50ch;
     line-height: 1.5rem;
 }
 
@@ -112,15 +113,17 @@ a {
     text-decoration-color: var(--theme--light__highlight);
     color: var(--theme--light__highlight);
 }
+.logo-wrapper {
+    margin: 10px;
+    padding: 30px;
+    border-radius: 700px;
+}
 
 .logo {
-    display: none;
-    // aspect-ratio: 1;
-    // padding: 8px;
+    aspect-ratio: 1;
     // height: 10vh;
     // width: 10vh;
     // min-height: 64px;
-    // background-color: var(--accents_primary_strong);
     // transform-origin: top right;
     // transform: skewY(-30deg);
 }

@@ -1,0 +1,10 @@
+.spotlight {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at var(--pointerX, 50%) var(--pointerY, 50%), transparent 6em, var(--hot-pink-0) calc(6em + 1px), var(--hamman-blue-0) calc(6em + 1.5px)),
+    url(../img/late-maple-closeup.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}     
