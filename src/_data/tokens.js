@@ -1,10 +1,7 @@
+// import { birdMapColors } from "./bird-map-palette";
 const shades = {
-    electricBlue: [
-        "#8DEFF5",
-    ],
-    hotPink: [
-        "#ff3ded",
-    ],
+    electricBlue: ["#8DEFF5"],
+    hotPink: ["#ff3ded"],
     preciousPersimmon: [
         "rgb(255, 251, 250)",
         "rgb(255, 233, 227)",
@@ -15,7 +12,7 @@ const shades = {
         "rgb(188, 80, 53)",
         "rgb(157, 67, 44)",
         "rgb(110, 47, 31)",
-        "rgb(70, 30, 20)"
+        "rgb(70, 30, 20)",
     ],
     hammanBlue: [
         "rgb(242, 252, 252)",
@@ -27,7 +24,7 @@ const shades = {
         "rgb(54, 124, 126)",
         "rgb(45, 104, 105)",
         "rgb(31, 72, 73)",
-        "rgb(20, 46, 46)"
+        "rgb(20, 46, 46)",
     ],
     ruthlessEmpress: [
         "rgb(250, 250, 251)",
@@ -51,15 +48,15 @@ const shades = {
         "rgb(101, 115, 137)",
         "rgb(84, 96, 114)",
         "rgb(58, 67, 79)",
-        "rgb(37, 42, 50)"
-    ]
+        "rgb(37, 42, 50)",
+    ],
 };
 
-const cssShades = {}
+const cssShades = {};
 Object.entries(shades).forEach(([color, values]) => {
     values.forEach((value, index) => {
         cssShades[`--${color}-${index}`] = {
-            value
+            value,
         };
     });
 });
@@ -67,50 +64,50 @@ Object.entries(shades).forEach(([color, values]) => {
 const lightTheme = {
     text: {
         dark: {
-            value: '--ruthlessEmpress-9',
+            value: "--ruthlessEmpress-9",
         },
         light: {
-            value: '--ruthlessEmpress-8',
+            value: "--ruthlessEmpress-8",
         },
     },
     background: {
-        value: '--whaleShark-1'
+        value: "--whaleShark-1",
     },
     accents: {
         primary: {
             strong: {
-                value: 'var(--electricBlue-0)',
+                value: "var(--electricBlue-0)",
             },
             subtle: {
-                value: '--preciousPersimmon-8',
+                value: "--preciousPersimmon-8",
             },
         },
         secondary: {
             strong: {
-                value: '--preciousPersimmon-5'
+                value: "--preciousPersimmon-5",
             },
             subtle: {
-                value: '--preciousPersimmon-3'
-            }
-        }
+                value: "--preciousPersimmon-3",
+            },
+        },
     },
 };
 const font = {
-    '--serif': {
-        value: "'EB Garamond', Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif"
+    "--serif": {
+        value: "'EB Garamond', Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif",
     },
-    '--system': {
-        value: "'Eb Garamond', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif"
+    "--system": {
+        value: "'Eb Garamond', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif",
     },
     size: {
         base: {
             value: "clamp(1.25em, -1rem + 4vw, 2em)",
             min: {
                 value: "1.25em",
-            }
-        }
-    }
-}
+            },
+        },
+    },
+};
 
 // const cssShades = Object.entries(shades).reduce((prev, [name, values]) => {
 //     values.forEach((rgbString, index) => {
@@ -119,11 +116,11 @@ const font = {
 //     return prev;
 // }, {})
 
-module.exports = {
+export default {
     font,
+    // ...birdMapColors,
     ...cssShades,
     color: {
         ...lightTheme,
     },
-
-}
+};

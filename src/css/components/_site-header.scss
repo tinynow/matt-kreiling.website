@@ -1,9 +1,56 @@
 /* Header */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .site-header {
-    border-bottom: 1px outset var(--color-site-header__border, #444);
-    // overflow: hidden;
-    // display: grid;
-    // grid-template-columns: 10vh min-content 10vh;
-    // grid-template-rows: max-content 7vh;
-    // padding-inline: clamp(4px, 1vw, 2rem);
+    background-color: #444;
+    color: #d6d7c0;
+    font-family: "Service Gothic", Arial, sans-serif;
+    text-transform: uppercase;
+}
+.site-footer {
+    padding: 2em 1em;
+    background-color: #444;
+    color: #d6d7c0;
+    font-family: var(--cascadia), Arial, sans-serif;
+}
+main {
+    flex-grow: 1;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header-border {
+    height: 4px;
+    background-size: 200% 400%;
+    background-image: linear-gradient(
+        to right,
+        hsl(230deg 97% 31%) 0%,
+        hsl(280deg 100% 30%) 7%,
+        hsl(304deg 100% 30%) 15%,
+        hsl(320deg 100% 38%) 22%,
+        hsl(330deg 100% 45%) 30%,
+        hsl(337deg 100% 49%) 38%,
+        hsl(351deg 100% 58%) 46%,
+        hsl(11deg 100% 60%) 54%,
+        hsl(28deg 100% 52%) 63%,
+        hsl(38deg 100% 50%) 72%,
+        hsl(46deg 100% 50%) 81%,
+        hsl(55deg 100% 48%) 91%,
+        hsl(68deg 100% 50%) 100%
+    );
+    animation: gradient 25s linear infinite;
 }

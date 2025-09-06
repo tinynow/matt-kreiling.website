@@ -1,10 +1,24 @@
 .spotlight {
+  opacity: .8;
   position: fixed;
   z-index: -1;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at var(--pointerX, 50%) var(--pointerY, 50%), transparent 6em, var(--hot-pink-0) calc(6em + 1px), var(--hamman-blue-0) calc(6em + 1.5px)),
-    url(../img/late-maple-closeup.jpg);
+  animation: rotate linear 60s infinite;
+  background-image: var(--rainbow);
+    // radial-gradient(circle at var(--pointerX, 50%) var(--pointerY, 50%), transparent 6em, var(--hot-pink-0) calc(6em + 1px), var(--hamman-blue-0) calc(6em + 1.5px)),
+    // url(../img/late-maple-closeup.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 20vw 50vw 400px 700px;
+  width: 120%;
+  clip-path: shape(
+  from 50% 89%,
+  line to 43.95% 83.5%,
+  curve to 8.35% 35.5% with 22.5% 64% / 8.35% 51%,
+  curve to 31.25% 12.5% with 8.35% 22.5% / 18.5% 12.5%,
+  curve to 50% 21% with 38.5% 12.5% / 45.45% 16%,
+  curve to 68.75% 12.5% with 54.55% 16% / 61.5% 12.5%,
+  curve to 91.65% 35.5% with 81.5% 12.5% / 91.65% 22.5%,
+  curve to 56.05% 83.5% with 91.65% 51% / 77.5% 64%,      
+  close);
 }     

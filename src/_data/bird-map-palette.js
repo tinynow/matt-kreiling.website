@@ -1,4 +1,4 @@
-const birdMapColors = {
+export const birdMapColors = {
     "open-boreal": {
         h: 86,
         s: 27,
@@ -19,7 +19,7 @@ const birdMapColors = {
         s: 42,
         l: 40,
     },
-    "grasslands": {
+    grasslands: {
         h: 47,
         s: 74,
         l: 61,

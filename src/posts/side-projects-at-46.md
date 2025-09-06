@@ -3,22 +3,23 @@ title: Side Projects at 46
 description: A bunch of excuses
 date: 2022-05-03
 tags:
-  - developing in the open
-  - being a person
+    - developing in the open
+    - being a person
 layout: layouts/post.njk
 ---
 
 My side projects, so far, are pretty unimpressive. They are numerous, diverse, and go back 12 years.
 
 The projects folder and codepen collection are massive graveyards of cool beginnings. Hundreds of hello worlds and prototypes:
-- in all of the trendiest frameworks, 
+
+- in all of the trendiest frameworks,
 - with the coolest CSS,
-- the newest DOM APIs, 
+- the newest DOM APIs,
 - random animations,
-- static site generators, 
+- static site generators,
 - custom icons,
-- design tokens, 
-- monorepos, 
+- design tokens,
+- monorepos,
 - and all the new hotness.
 
 One thing they have in common is that they are incomplete. Almost none of them have shipped.
@@ -41,7 +42,7 @@ I hope I don't get in trouble for this. Your job doesn't need to be the center o
 
 ### Important
 
-Somehow, this isn't obvious to my brain that a given side project is important. Maybe because it will be less fun? Deciding that a thing is important seems as difficult as it is obvious. 
+Somehow, it isn't obvious to my brain that a given side project is important. Maybe because it will be less fun? Deciding that a thing is important seems as difficult as it is obvious.
 
 ### You saved your energy for it
 
@@ -55,7 +56,7 @@ There are some interesting apps that will donate your money if you don't meet a 
 
 This blog has already shipped! Will it stay up to date and published? Time will tell.
 
-
 ## Release notes
+
 - Published this blog - so actually shipped it
 - Netlify is almost too easy

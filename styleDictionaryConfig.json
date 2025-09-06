@@ -4,10 +4,12 @@
         "scss": {
             "transformGroup": "css",
             "buildPath": "src/css/",
-            "files": [{
-                "destination": "customProperties.scss",
-                "format": "css/variables"
-            }]
+            "files": [
+                {
+                    "destination": "customProperties.scss",
+                    "format": "css/variables"
+                }
+            ]
         }
     }
 }

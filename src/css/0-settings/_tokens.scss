@@ -1,0 +1,20 @@
+:root {
+    --rainbow: linear-gradient(
+        145deg,
+        hsl(240deg 100% 20%) 0%,
+        hsl(281deg 100% 21%) 4%,
+        hsl(304deg 100% 23%) 9%,
+        hsl(319deg 100% 30%) 15%,
+        hsl(329deg 100% 36%) 22%,
+        hsl(336deg 100% 41%) 29%,
+        hsl(346deg 83% 51%) 37%,
+        hsl(3deg 95% 61%) 46%,
+        hsl(17deg 100% 59%) 55%,
+        hsl(30deg 100% 55%) 65%,
+        hsl(40deg 100% 50%) 75%,
+        hsl(48deg 100% 50%) 87%,
+        hsl(55deg 100% 50%) 100%
+    );
+    --redbrown: hsl(10deg 85% 19%);
+    --indigo-grey: hsl(225deg 12% 39%);
+}

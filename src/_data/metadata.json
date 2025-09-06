@@ -1,21 +1,21 @@
 {
-  "title": "MK - Code and Not Code",
-  "url": "https://matt-kreiling.website/",
-  "language": "en",
-  "description": "Making a mess making sense. Making websites.",
-  "feed": {
-    "subtitle": "Making a mess making sense. Making websites.",
-    "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "id": "https://matt-kreiling.website/"
-  },
-  "jsonfeed": {
-    "path": "/feed/feed.json",
-    "url": "https://matt-kreiling.website/feed/feed.json"
-  },
-  "author": {
-    "name": "Matt Kreiling",
-    "email": "kreiling@gmail.com",
-    "url": "https://matt-kreiling.website/about-me/"
-  }
+    "title": "MK - Code and Not Code",
+    "url": "https://matt-kreiling.website/",
+    "language": "en",
+    "description": "Making a mess making sense. Making websites.",
+    "feed": {
+        "subtitle": "Making a mess making sense. Making websites.",
+        "filename": "feed.xml",
+        "path": "/feed/feed.xml",
+        "id": "https://matt-kreiling.website/"
+    },
+    "jsonfeed": {
+        "path": "/feed/feed.json",
+        "url": "https://matt-kreiling.website/feed/feed.json"
+    },
+    "author": {
+        "name": "Matt Kreiling",
+        "email": "kreiling@gmail.com",
+        "url": "https://matt-kreiling.website/about-me/"
+    }
 }

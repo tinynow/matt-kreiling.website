@@ -4,7 +4,7 @@ description: Even with the massive amount of yak-shaving and bike-shedding, thin
 date: 2022-05-25
 updated: 2022-05-30
 tags:
-  - developing in the open
+    - developing in the open
 layout: layouts/post.njk
 ---
 
@@ -25,6 +25,7 @@ Here are some of the insights and accomplishments that have blessed me after one
 - I am providing myself some evidence that I really do know how to make a website and that I'm actually pretty amazing at it. Impostor syndrome is real and it seems ridiculous that it still effects me 12 years in. This process is a really good counter to those "not good enough" thoughts and feelings.
 
 ## Release notes
+
 - Continued development of a color system. Initial development of some programmatic generation of shades from initial colors.
 - Rabbit holes on how tokens should be structured. Took another look at [style-dictionary](https://amzn.github.io/style-dictionary/#/). I had decided not to take on dependencies easily. I understand that complexity exists, but I don't want to introduce anything that causes more pain that it solves. I've structured the tokens in a really weird way, mainly to provide hue,saturation, and lightness values separately.
 - Bike-shedding on where color functions should go, where calculations should be made.

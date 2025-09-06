@@ -1,0 +1,18 @@
+@view-transition {
+    navigation: auto;
+}
+
+article {
+    animation-duration: 0.2s;
+}
+html:active-view-transition-type(forwards, backwards) {
+    :root {
+        view-transition-name: none;
+    }
+    main {
+        view-transition-name: content;
+    }
+    .post-list-item {
+        view-transition-name: post-item;
+    }
+}

@@ -7,19 +7,19 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const eleventySass = require("eleventy-sass");
 const Image = require("@11ty/eleventy-img");
-const StyleDictionary = require('style-dictionary').extend({
-    source: ['src/_data/tokens.js'],
-    platforms: {
-        scss: {
-            transformGroup: 'css', //https://amzn.github.io/style-dictionary/#/transform_groups?id=css
-            buildPath: 'src/css/',
-            files: [{
-                destination: 'customProperties.scss',
-                format: 'css/variables',
-            }]
-        }
-    }
-});
+// const StyleDictionary = require('style-dictionary').extend({
+//     source: ['src/_data/tokens.js'],
+//     platforms: {
+//         scss: {
+//             transformGroup: 'css', //https://amzn.github.io/style-dictionary/#/transform_groups?id=css
+//             buildPath: 'src/css/',
+//             files: [{
+//                 destination: 'customProperties.scss',
+//                 format: 'css/variables',
+//             }]
+//         }
+//     }
+// });
 
 module.exports = function (eleventyConfig) {
     // Copy the folders to the output
@@ -32,22 +32,26 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginNavigation);
 
     // Add responsive image shortcode
-    eleventyConfig.addShortcode("responsiveImage", async function(src, alt, sizes = "100vw") {
-        if (alt === undefined) {
-            throw new Error(`Missing \`alt\` on responsiveImage from: ${src}`);
-        }
+    eleventyConfig.addShortcode(
+        "responsiveImage",
+        async function (src, alt, sizes = "100vw") {
+            if (alt === undefined) {
+                throw new Error(
+                    `Missing \`alt\` on responsiveImage from: ${src}`,
+                );
+            }
 
-        let metadata = await Image(src, {
-            widths: [400, 800, 1200], // Small mobile, tablet, desktop
-            formats: ["webp", "jpeg"],
-            outputDir: "./_site/img/",
-            urlPath: "/img/"
-        });
+            let metadata = await Image(src, {
+                widths: [400, 800, 1200], // Small mobile, tablet, desktop
+                formats: ["webp", "jpeg"],
+                outputDir: "./_site/img/",
+                urlPath: "/img/",
+            });
 
-        let lowsrc = metadata.jpeg[0];
-        let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+            let lowsrc = metadata.jpeg[0];
+            let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
 
-        return `<picture>
+            return `<picture>
             ${Object.values(metadata)
                 .map((imageFormat) => {
                     return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat
@@ -63,7 +67,8 @@ module.exports = function (eleventyConfig) {
                 loading="lazy"
                 decoding="async">
         </picture>`;
-    });
+        },
+    );
 
     // eleventyConfig.on('eleventy.beforeWatch', async (changedFiles) => {
 
@@ -74,16 +79,20 @@ module.exports = function (eleventyConfig) {
     //     StyleDictionary.buildAllPlatforms();
     // });
 
-    eleventyConfig.addFilter("readableDate", dateObj => {
-        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat("LLL d, yyyy");
+    eleventyConfig.addFilter("readableDate", (dateObj) => {
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+            "LLL d, yyyy",
+        );
     });
 
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
+    eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+            "yyyy-LL-dd",
+        );
     });
 
-    // Get the first `n` elements of a collection.    
+    // Get the first `n` elements of a collection.
     eleventyConfig.addFilter("head", (array, n) => {
         if (!Array.isArray(array) || array.length === 0) {
             return [];
@@ -101,16 +110,18 @@ module.exports = function (eleventyConfig) {
     });
 
     function filterTagList(tags) {
-        return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+        return (tags || []).filter(
+            (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1,
+        );
     }
 
-    eleventyConfig.addFilter("filterTagList", filterTagList)
+    eleventyConfig.addFilter("filterTagList", filterTagList);
 
     // Create an array of all tags
     eleventyConfig.addCollection("tagList", function (collection) {
         let tagSet = new Set();
-        collection.getAll().forEach(item => {
-            (item.data.tags || []).forEach(tag => tagSet.add(tag));
+        collection.getAll().forEach((item) => {
+            (item.data.tags || []).forEach((tag) => tagSet.add(tag));
         });
 
         return filterTagList([...tagSet]);
@@ -120,7 +131,7 @@ module.exports = function (eleventyConfig) {
     let markdownLibrary = markdownIt({
         html: true,
         breaks: true,
-        linkify: true
+        linkify: true,
     }).use(markdownItAnchor, {
         permalink: markdownItAnchor.permalink.ariaHidden({
             placement: "after",
@@ -128,7 +139,7 @@ module.exports = function (eleventyConfig) {
             symbol: "#",
             level: [1, 2, 3, 4],
         }),
-        slugify: eleventyConfig.getFilter("slug")
+        slugify: eleventyConfig.getFilter("slug"),
     });
     eleventyConfig.setLibrary("md", markdownLibrary);
 
@@ -136,29 +147,26 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.setBrowserSyncConfig({
         callbacks: {
             ready: function (err, browserSync) {
-                const content_404 = fs.readFileSync('_site/404.html');
+                const content_404 = fs.readFileSync("_site/404.html");
 
                 browserSync.addMiddleware("*", (req, res) => {
                     // Provides the 404 content without redirect.
-                    res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
+                    res.writeHead(404, {
+                        "Content-Type": "text/html; charset=UTF-8",
+                    });
                     res.write(content_404);
                     res.end();
                 });
             },
         },
         ui: false,
-        ghostMode: false
+        ghostMode: false,
     });
 
     return {
         // Control which files Eleventy will process
         // e.g.: *.md, *.njk, *.html, *.liquid
-        templateFormats: [
-            "md",
-            "njk",
-            "html",
-            "liquid",
-        ],
+        templateFormats: ["md", "njk", "html", "liquid"],
 
         // Pre-process *.md files with: (default: `liquid`)
         markdownTemplateEngine: "njk",
@@ -185,8 +193,7 @@ module.exports = function (eleventyConfig) {
             input: "src",
             includes: "_includes",
             data: "_data",
-            output: "_site"
-        }
+            output: "_site",
+        },
     };
 };
-

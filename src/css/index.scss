@@ -1,7 +1,9 @@
 /* test */
-@import "customProperties";
+// @import "customProperties";
+@import "0-settings/tokens";
 @import "0-settings/space";
 @import "0-settings/animations";
+@import "1-global/page-transitions";
 @import "1-global/remedy";
 @import "1-global/reset";
 @import "1-global/typography";
@@ -9,17 +11,20 @@
 @import "components/main-nav";
 @import "components/tags";
 @import "components/site-header";
-@import "1-global/page-layouts";
 
 main {
-    padding: calc(var(--space)) calc(var(--space) / 2);
+    padding: calc(var(--space)) calc(var(--space) / 2) calc(var(--space) * 2)
+        4vw;
+    width: clamp(300px, 94vw, 1200px);
 }
 
 pre,
 code {
-    font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
-        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier,
-        monospace;
+    font-family:
+        Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+        "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+        "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+        "Courier New", Courier, monospace;
     line-height: 1.5;
 }
 
@@ -79,7 +84,7 @@ code {
     display: block;
     font-size: clamp(1.25em, 9vw, 2em);
     line-height: 1.1;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -105,22 +110,35 @@ a[href].direct-link:focus:visited,
 
 /* Colors */
 body {
-    background-color: var(--theme--light__bg);
+    background: var(--rainbow);
     color: var(--theme--light__text);
+    animation: gradient 25s linear infinite;
+}
+main {
+    background-image: linear-gradient(to right, #d6d7c0 700px, transparent);
 }
 
+h1,
+.h1 {
+    color: var(--redbrown);
+}
+
+h2,
+.h2 {
+    color: var(--indigo-grey);
+}
 a {
     text-decoration-color: var(--theme--light__highlight);
     color: var(--theme--light__highlight);
 }
+
 .logo-wrapper {
-    margin: 10px;
-    padding: 30px;
-    border-radius: 700px;
+    display: none;
 }
 
 .logo {
     aspect-ratio: 1;
+    border: 0.5px honeydew solid;
     // height: 10vh;
     // width: 10vh;
     // min-height: 64px;
@@ -159,3 +177,7 @@ a {
     height: 30px;
 }
 /*# sourceMappingURL=index.css.map */
+
+a[href^="https://developer.mozilla.org/"] {
+    color: red;
+}
