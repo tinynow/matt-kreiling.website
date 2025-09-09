@@ -3,9 +3,10 @@ title: Side Projects at 46
 description: A bunch of excuses
 date: 2022-05-03
 tags:
-    - developing in the open
-    - being a person
+  - developing in the open
+  - being a person
 layout: layouts/post.njk
+edited: 2025-09-09
 ---
 
 My side projects, so far, are pretty unimpressive. They are numerous, diverse, and go back 12 years.
@@ -38,7 +39,7 @@ Since I do ship things, in my current role as a front end developer and my previ
 
 ### Not on the side
 
-I hope I don't get in trouble for this. Your job doesn't need to be the center of your life, and your work doesn't need to be at the center of your job. Maybe we can start calling our side projects, "center projects," or we maybe "home work," anything to give them a higher status than so called "work projects."
+Your job doesn't need to be the center of your life, and your work doesn't need to be at the center of your job. Maybe we can start calling our side projects, "center projects," or we maybe "home work," anything to give them a higher status than so called "work projects."
 
 ### Important
 
